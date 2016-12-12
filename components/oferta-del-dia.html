@@ -1,0 +1,20 @@
+<dom-module id="oferta-del-dia">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+            h2 {
+                color: #933;
+            }
+        </style>
+        <h1><content select=".titulo"></content></h1>
+        <h2><content select=".descripcion"></content></h2>
+        <h3><content select=".precio"></content></h3>
+    </template>
+    <script>
+        Polymer({
+            is: 'oferta-del-dia'
+        });
+    </script>
+</dom-module>

@@ -1,5 +1,9 @@
 <link rel="import" href="curso-polymer-template.html">
 <link rel="import" href="../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../components/hi-polymer.html">
+<link rel="import" href="../components/modal-message.html">
+<link rel="import" href="../components/reloj-actual.html">
+<link rel="import" href="../components/oferta-del-dia.html">
 
 <dom-module id="curso-polymer-clase-1">
 	<template>
@@ -10,6 +14,9 @@
 			
 			paper-card {
 				width: 100% !important;
+			}
+			.hrBottom {
+				border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 			}
 		</style>
 		<curso-polymer-template card-title="Clase número 1">
@@ -37,33 +44,50 @@
 				<marked-element markdown="`<link import='rel' href='..bower_components/polymer/polymer.html'>`">
 				</marked-element>
 			</p>
-            <p>
-                Una vez que ya tenemos importada la librería podemos comenzar a crear componentes en nuestra aplicación, para ello utilizaremos un snippet de Polymer para Visual Studio Code que podemos encontrar buscando <b>polymer snippet</b>. Una vez que lo tengamos instalado y habilitado, escribiendo <b>pe y pulsando tabulador</b>, se creará toda la estructura de la página de Polymer para comenzar a realizar el componente.
-            </p>
-            <p>
-                En una página de Polymer podemos encontrar varias etiquetas diferenciadas, en un primer lugar, encontraremos la etiqueta <b>dom-module</b>, esta etiqueta delimita el DOM de nuestro componente, en ella es en la que comenzaremos a escribir nuestro código.
-            </p>
-            <p>
-                Dentro de esta etiqueta dom-module encontraremos la etiqueta <b>template</b> y la etiqueta <b>script</b>.
-            </p>
-            <p>
-                En la etiqueta <b>template</b> escribiremos el código css y el código html, el código css debe de ir delimitado por la etiqueta <b>style</b> y a continuación del cierre de la etiqueta style podremos comenzar a escribir el código html.
-            </p>
-            <p>
-                En la etiqueta script, escribiremos todo el código javascript de la aplicación. En cada componente nuevo que se cree en Polymer debemos de escribir lo siguiente:
-            </p>
-            <p>
-                <marked-element markdown="`Polymer({
+			<p>
+				Una vez que ya tenemos importada la librería podemos comenzar a crear componentes en nuestra aplicación, para ello utilizaremos
+				un snippet de Polymer para Visual Studio Code que podemos encontrar buscando <b>polymer snippet</b>. Una vez que
+				lo tengamos instalado y habilitado, escribiendo <b>pe y pulsando tabulador</b>, se creará toda la estructura de la página
+				de Polymer para comenzar a realizar el componente.
+			</p>
+			<p>
+				En una página de Polymer podemos encontrar varias etiquetas diferenciadas, en un primer lugar, encontraremos la etiqueta
+				<b>dom-module</b>, esta etiqueta delimita el DOM de nuestro componente, en ella es en la que comenzaremos a escribir
+				nuestro código.
+			</p>
+			<p>
+				Dentro de esta etiqueta dom-module encontraremos la etiqueta <b>template</b> y la etiqueta <b>script</b>.
+			</p>
+			<p>
+				En la etiqueta <b>template</b> escribiremos el código css y el código html, el código css debe de ir delimitado por la
+				etiqueta <b>style</b> y a continuación del cierre de la etiqueta style podremos comenzar a escribir el código html.
+			</p>
+			<p>
+				En la etiqueta script, escribiremos todo el código javascript de la aplicación. En cada componente nuevo que se cree en Polymer
+				debemos de escribir lo siguiente:
+			</p>
+			<p>
+				<marked-element markdown="`Polymer({
                     is: 'nombre-del-componente'
                 });`">
 				</marked-element>
-            </p>
-            <p>El nombre del componente debe de coincidir también con el id que pongamos en la etiqueta de dom-module</p>
-            <p>
-                <marked-element markdown="`<dom-module id='nombre-del-componente'>`">
+			</p>
+			<p>El nombre del componente debe de coincidir también con el id que pongamos en la etiqueta de dom-module</p>
+			<p>
+				<marked-element markdown="`<dom-module id='nombre-del-componente'>`">
 				</marked-element>
-            </p>
-			
+			</p>
+			<div class="hrBottom"></div>
+			<h3>Ejemplos realizados</h3>
+			<hi-polymer></hi-polymer>
+			<modal-message msg="Hola, esto es un mensaje" is-visible="true" btn="ocultar"></modal-message>
+			<reloj-actual btn-mostrar-reloj="Ocultar"></reloj-actual>
+			<oferta-del-dia>
+				<div class="titulo">Patatas fritas Congeladas</div>
+				<div class="descripcion">La oferta del día es un 2x1 de patatas</div>
+				<div class="precio">2 €</div>
+			</oferta-del-dia>
+
 		</curso-polymer-template>
 	</template>
 	<script>
